@@ -6,7 +6,6 @@
     padding: 0;
 }
 body {
-    margin: 0;
     font-family: "Roboto", sans-serif;
 }
 .window {
@@ -15,7 +14,6 @@ body {
 }
 .content {
     display: flex;
-    /*flex-direction: column;*/
     flex-wrap: wrap;
 }
 .about {
@@ -26,7 +24,7 @@ body {
     font-family: Roboto Slab;
     font-weight: bold;
     font-size: 26px;
-    margin: 0 auto;
+    /*margin: 0 auto;*/
     margin-top: 56px; /*почему здесь фиксированное, 
     а не что-то иное*/
 }
@@ -39,7 +37,7 @@ body {
     line-height: 150%; /*жто разве надо копировать из фигмы?*/
 }
 .content-text p {
-    margin-bottom: 18px 0;
+    margin: 18px 0;
 }
 .content-img {
     width: 146.32px;
@@ -50,11 +48,11 @@ body {
 .about {
     width: 308px;
     margin: 0 auto;
-    margin-top: 45,71px;
+    margin-top: 45.71px;
     margin-left: 0;
 }
 .about-card {
-    /*зачем им ставить максимальную щирину?*/
+    /*зачем им ставить ширину?*/
     width: 120px;
     /*margin-right: 40px;*/
     margin-bottom: 25px;
@@ -62,7 +60,9 @@ body {
     font-style: normal;
     font-weight: normal;
     font-size: 10px;
-    line-height: 130%; /*много не того? моно объединить*/
+    line-height: 130%; /*можно эту строку 
+    и в след классе такую же как-то в общее вынести, 
+    чтобы не потоврялось?*/
 }
 .card-title {
     font-family: Roboto;
@@ -76,7 +76,7 @@ body {
 }
 /*tablet*/
 /*можно как-то в 
-относительных единицах задать*/
+относительных единицах задать? Как это понять?*/
 @media (min-width: 834px) {
     .window {
         min-width: 834px;
@@ -100,30 +100,49 @@ body {
         font-size: 15px;
     }
 }
-/*desktop unfinished*/
+/*desktop*/
 @media (min-width: 1140px) {
     .window {
-        min-width: 834px;
+        min-width: 1140px;
+    }
+    .content {
+        flex-wrap: nowrap;
+    }
+    .content-img {
+        margin-left: 190px;
     }
     .main-title {
-        min-width: 834px;
-        height: 64px;
-        font-size: 32px;
+        margin-bottom: 45px;
+        font-size: 55px;
+        line-height: 101.38%; /*так в фигме. 
+        но почему-то смотрится не так, как надо*/
     }
     .content-text {
-        width: 383px;
-        font-size: 14px;
+        width: 662px; /*надо ли жестко ограничивать?*/
+        font-size: 24px;
+        line-height: 150%;
+    }
+    .content-img {
+        width: 314px;
+        height: 315px;
     }
     .about {
-        width: 690px;
+        margin-top: 90px;
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+        font-size: 18px;
     }
     .about-card {
-        font-size: 11px;
+        width: 900px;
     }
     .card-title {
         font-size: 15px;
+        font-size: 25px;
+        line-height: 130%;
     }
     .about-img {
         display: block;
+        margin-right: 130px;
     }
 }
